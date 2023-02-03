@@ -91,11 +91,6 @@ class UserController{
           }
     
           if (!user) {
-            await sendMailTo(
-              process.env.ADMIN_MAIL,
-              "Nuevo registro de usuario",
-              "Se ha registrado un nuevo usuario."
-            );
             client.messages.create({
               body: "Se ha registrado un nuevo usuario.",
               from: process.env.TWILIO_PHONE,
